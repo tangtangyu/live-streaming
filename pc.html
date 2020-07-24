@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pc首页</title>
+  <link rel="stylesheet" type="text/css"  href="css/pchome.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- swiper.css -->
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <!-- swiper.js -->
+	<script src="js/json2.js"></script>
+  
+	<script src="js/jquery-1.8.3.min.js"></script> 
+	<script src="js/swiper.min.js"></script>
+	<script src="js/globle1.js"></script>
+</head>
+
+<body>
+  <div class="pchome" id="pchome">
+    <div class="bannerbox">
+      <!-- 轮播 -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">  
+        </div>
+        <div class="pagination"></div>
+      </div>
+      <div class="">
+        <!-- tab -->
+        <div class="tab">
+          <div class="zong" style="height: 5px;">
+            <ul class="tab-tilte" style="display: none;">
+            	<li class="active">在线直播</li>
+            	<li>往期回顾</li>
+            </ul>
+            <!-- 搜索 -->
+            <div class="search" style="display: none;">
+              <input type="text" placeholder="搜索课程" class="like">
+              <div class="colseSearch">x</div>
+              <button class="searchBtn" style="background: rgb(98,207,210);">搜索</button>
+            </div>
+          </div>
+          <!--  tab内容-->
+          <div class="tab-content">
+          	<div class="item active">
+          		<div class="listitem" id="enterLive">
+	          		<img src="images/bg5.png" alt="">
+	          		<div class="itembot">
+	          			<button id="enterLive" class="btn btn-xs btn-success" style="background: rgb(98,207,210);">进入</button>
+	          			<p>2020年7月31日9：00直播 <span style="color: red;" class="time"></span></p>
+	          			
+	          		</div> 
+	          	</div>
+	          	<div class="histortList"></div>
+          	</div>
+          
+          		<!-- <div class="listitem" onclick="video('http://i.bucg.com/e/act/whzvideo/whzvideo3.mp4')">
+	          		<img src="images/bg3.png" alt="">
+	          		<div class="itembot">
+	          			<p>第三届文化周</p>
+	          			<span>2019年企业文化周 第四周</span> 
+	          			<span style="color: red;">2019年7月1日</span> 
+	          		</div> 
+	          	</div>
+	          	<div class="listitem" onclick="video('http://i.bucg.com/e/act/whzvideo/whzvideo2.mp4')">
+	          		<img src="images/bg2.png" alt="">
+	          		<div class="itembot">
+	          			<p>第二届文化周</p>
+	          			<span>2018年企业文化周 第四周</span> 
+	          			<span style="color: red;">2018年7月1日</span> 
+	          		</div> 
+	          	</div>
+	          	<div class="listitem" onclick="video('http://i.bucg.com/e/act/whzvideo/whzvideo1.mp4')">
+	          		<img src="images/bg1.png" alt="">
+	          		<div class="itembot">
+	          			<p>第一届文化周</p>
+	          			<span>2017年企业文化周 第四周</span> 
+	          			<span style="color: red;">2017年7月1日</span> 
+	          		</div> 
+	          	</div> -->
+          	<!--</div>-->
+          	
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  $('#enterLive').on('click', function () {
+      location.href = 'pclive.html'
+  })
+  $.getJSON("js/list.json", function (data) {
+    let str = ''
+    $.each(data, (index, item) => {
+        str += '<div class="listitem" data-src='+ item.video +' data-title='+ item.title1 +' data-headTitle=' + item.title + ' data-date= '+ item.date +'>'
+        str += '<img src='+item.img+' alt="">'
+        str += '<div class="itembot">'
+        str += '<span>'+item.date +'</span>'
+        str += '<span>'+item.title1+'</span>'
+        
+        str += '<p>'+item.title+'</p>'
+        str += '</div></div>'
+    })
+    $('.histortList').html(str)
+  })
+  $('.histortList').on('click', '.listitem', function () {
+      location.href = 'pc-playpage.html?src=' + $(this).attr('data-src') + '&title=' + $(this).attr('data-title') + '&headTitle=' + $(this).attr('data-headTitle') + '&date=' + $(this).attr('data-date')
+  })
+  	document.oncontextmenu =function(){
+			return false
+		}
+    window.onload = function () {
+    	var name=''
+			var userCode=GetQueryString('usercode'); 
+//    $.ajax({
+//				url: window.host+'/service/curriculumtrain?method=round&usercode='+userCode,
+//				type: 'get',
+//				dataJson: 'json',
+//				success: function(data) {
+//					var data = JSON.parse(data)
+//					var arr = data.data;
+
+//		     $('.swiper-wrapper .swiper-slide').click(function(){
+//		     	var pk=$(this).attr('pk');
+//		     	location.href='pc-playpage.html?pk='+pk+'&usercode='+userCode
+//		     })
+//				}
+//			});
+					var str='';
+					for (var i=0;i<4;i++) {
+						str+='<div class="swiper-slide"><div class="bancont"><div class="pic"><img src="images/bg'+(i+1)+'.png" alt="">'
+            str+='</div> </div></div>'
+//          str+='</div> <div class="bantit"><h1>主场活动《感动城建2020》</h1><span></span></div></div></div>'
+					}
+					$('.swiper-wrapper').html(str);
+					var mySwiper = new Swiper('.swiper-container', {
+							slidesPerView: 3,
+	     				spaceBetween: 10,
+	     				speed:5000,
+	     				autoplayDisableOnInteraction : false,
+			        autoplay:  {
+					      delay: 5000,
+					      disableOnInteraction: false,
+					      
+					    },
+			        loop: true,//可选选项，开启循环
+			        pagination:'.pagination'
+			    });
+			    $(".swiper-container").mouseenter(function(){
+			    	 mySwiper.autoplay.stop();
+			    }).mouseleave(function(){
+			       mySwiper.autoplay.start();
+			    })
+  
+			$('.searchBtn').click(function(){
+				var like=$('.like').val();
+				$('.tab-tilte li').eq(0).click();
+				$('.tab-tilte li').eq(0).html('搜索结果')
+				setTabContent(name,like);
+			})
+			$('.colseSearch').click(function(){
+				$('.like').val('');
+				$('.tab-tilte li').eq(0).html('全部')
+				$('.tab-tilte li').eq(0).click();
+			})
+			$(".tab-tilte li").click(function(){
+				var index=$(this).index();
+				$(this).addClass("active").siblings().removeClass("active");
+				$(".tab-content .item").removeClass("active")
+				$(".tab-content .item").eq(index).addClass("active");
+			})
+			// $('.tab-content .listitem').click(function(){
+			// 	location.href='pc.html';
+            // })
+            
+
+//			 $.ajax({
+//				url: window.host+'/service/curriculumtrain?method=types&usercode='+userCode,
+//				type: 'get',
+//				dataJson: 'json',
+//				success: function(data) {
+//					var data = JSON.parse(data)
+//					var arr = data.data;
+//					var str='<li>全部</li>';
+//					for (var i=0;i<arr.length;i++) {
+//						str+='<li urlName='+arr[i].name+'>'+arr[i].name+'</li>';
+//					}
+//					$('.tab-tilte').html(str);
+//					$('.tab-tilte li').click(function(){
+//						$(this).addClass('active').siblings().removeClass('active')
+//						name=$(this).attr('urlName');
+//						setTabContent(name)
+//					})
+//					$('.tab-tilte li').eq(0).click();
+//				}
+//			})
+//			function setTabContent(name,like){
+//				var data={
+//						method:'courses',
+//						type:name,
+//						usercode:userCode
+//				}
+//				if(like){
+//					data.nameLike=like
+//				};
+//				$.ajax({
+//					type:"get",
+//					dataJson: 'json',
+//					url:window.host+"/service/curriculumtrain",
+//					data:data,
+//					async:true,
+//					success:function(data){
+//							var data = JSON.parse(data);
+//							var arr = data.data;
+//							var str='';
+//							if(arr.length){
+//								for (var i=0;i<arr.length;i++) {
+//									str+='<div class="listitem" pk='+arr[i].pk+'><img src="'+arr[i].preview+'" alt=""><div class="itembot"><p>'+arr[i].name+'</p><span>['+arr[i].cotjc+'节课时]</span> </div> </div>'
+//								}
+//								$('.tab-content').html(str);
+//								$('.tab-content .listitem').click(function(){
+//									var pk=$(this).attr('pk');
+//									location.href='pc-playpage.html?pk='+pk+'&usercode='+userCode
+//								})
+//							}else{
+//								str='<div style="text-algin:center;text-indent: 2em;">暂无内容</div>';
+//								$('.tab-content').html(str);
+//							}
+//							
+//					}
+//				});
+//			}
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+				var context = "";
+				if(r != null)
+					context = r[2];
+				reg = null;
+				r = null;
+				return context == null || context == "" || context == "undefined" ? "" : context;
+			}
+			var endTime="2020/7/31 9:00";
+			countDown(endTime,".time");
+		  var interval =	setInterval(function(){
+				countDown(endTime,".time");
+			}, 1000);
+      function addZero(i) {
+          return i < 10 ? "0" + i: i + "";
+      }
+      function countDown(time,dom) {
+          var nowtime = new Date();
+          var endtime = new Date(time);
+          var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+          var d = parseInt(lefttime / (24*60*60))
+          var h = parseInt(lefttime / (60 * 60) % 24);
+          var m = parseInt(lefttime / 60 % 60);
+          var s = parseInt(lefttime % 60);
+          d = addZero(d);
+          h = addZero(h);
+          m = addZero(m);
+          s = addZero(s);
+         $(dom).html(`倒计时：${d}天 ${h}时 ${m}分 ${s}秒`);
+          if (lefttime >= -86400&&lefttime<0) {
+             $(dom).html(`活动正在进行`);
+             clearInterval(interval);
+              return;
+          }else if(lefttime <-1000*24*3600){
+          	 $(dom).html(`活动已结束`);
+          	  clearInterval(interval);
+          	  return;
+          }
+        }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "title": "第三届文化周",
+        "date": "2019-7",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo3.mp4",
+        "img":"../img/whz.png"
+    }, {
+        "title": "第二届文化周",
+        "date": "2018-7",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo2.mp4",
+        "img":"../img/whz.png"
+    }, {
+        "title": "第一届文化周",
+        "date": "2017-7",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo1.mp4",
+        "img":"../img/whz.png"
+    }
+]

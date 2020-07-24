@@ -1,0 +1,333 @@
+	@charset "utf-8";
+	/*video默认全屏按钮*/
+	video::-webkit-media-controls-fullscreen-button {
+		display: none !important;
+	}
+	/*video默认aduio音量按钮*/
+	
+	video::-webkit-media-controls-mute-button {
+		display: none !important;
+	}
+	/*video默认setting按钮*/
+	
+	video::-internal-media-controls-overflow-button {
+		display: none !important;
+	}
+	/*腾讯云点播禁用firefox全屏、设置按钮*/
+	
+	.trump-button[sub-component="fullscreen_btn"],
+	.trump-button[now="fullscreen"] {
+		display: none!important;
+	}
+	
+	.trump-button[sub-component="setting"] {
+		display: none !important;
+	}
+	/*禁用video的controls（要慎重！不要轻易隐藏掉，会导致点击视频不能播放）*/
+	
+	video::-webkit-media-controls {
+		display: none !important;
+	}
+	
+	.clear {
+		clear: both;
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+	
+	#willesPlay {
+		position: relative;
+	    margin: 0 auto;
+	    background: #000;
+		border: 1px #fcfcfc solid;
+		transition: all .5s;
+		z-index: 999999;
+	}
+	#willesPlay.fullscreen{
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh !important;
+	}
+	/* @ */
+	
+	#willesPlay .playContent {
+		position: relative;
+		overflow: hidden;
+		height:calc(100% - 48px);
+		cursor: pointer;
+	}
+	
+	#willesPlay .playContent .turnoff {
+		position: absolute;
+		z-index: 10;
+		right: -40px;
+		top: 50%;
+		margin-top: -90px;
+	}
+	
+	#willesPlay .playContent .turnoff li a {
+		display: block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 20px;
+		color: #fff;
+		background: rgba(0, 0, 0, .5);
+	}
+	
+	#willesPlay .playContent .turnoff li a:hover {
+		color: #666;
+	}
+	
+	#willesPlay .playContent .playTip {
+		position: absolute;
+		width: 110px;
+		height: 110px;
+		text-align: center;
+		line-height: 110px;
+		top: 50%;
+		left: 50%;
+		margin-left: -55px;
+		margin-top: -55px;
+		color: #1ca088;
+		font-size: 60px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	
+	#willesPlay .playControll {
+		position: absolute;
+		z-index: 2147483650;
+		width: 100%;
+		height: 48px;
+		background: rgba(0,0,0,.8);
+		bottom:0px;
+		right: 3px;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+		transition: bottom .5s;
+	}
+	.currentTime,.duration{
+		color: #fff;
+	}
+	#willesPlay .fullControll {
+		background: rgba(0, 0, 0, .5);
+	}
+	
+	#willesPlay .fullControll .timebar span {
+		color: #FFFFFF;
+	}
+	
+	#willesPlay .playControll .playPause {
+		float: left;
+		width: 20px;
+		height: 25px;
+		background: url(../images/control_01.png) 0px 0px no-repeat;
+		margin: 11px 0px 0px 12px;
+		cursor: pointer;
+	}
+	
+	#willesPlay .playControll .playIcon {
+		background-position: 0px -32px;
+	}
+	/*进度条*/
+	
+	#willesPlay .playControll .timebar {
+		float: left;
+		width: calc(100% - 220px);
+		line-height: 48px;
+		overflow: hidden;
+		margin: 0 auto;
+		margin: 0px 0px 0px 20px;
+	}
+	
+	#willesPlay .playControll .timebar .progress {
+		float: left;
+		width: 80%;
+		margin: 19px 5px;
+		height: 10px;
+		cursor: pointer;
+	}
+	
+	#willesPlay .playControll .timebar span {
+		float: left;
+		width: 8%;
+		text-align: center;
+	}
+	
+	#willesPlay .otherControl {
+		float: right;
+		position: relative;
+	}
+	
+	#willesPlay .otherControl span {
+		display: inline-block;
+		width: 16px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		vertical-align: middle;
+		font-size: 18px;
+		margin: 9px 4px;
+		cursor: pointer;
+		color: #919597;
+	}
+	
+	#willesPlay .otherControl span:hover {
+		font-size: 22px;
+		color: #1ca088;
+	}
+	/*音量*/
+	
+	#willesPlay .otherControl .volumeBar {
+		display: none;
+		position: absolute;
+		top: -110px;
+		left: 4px;
+		width: 26px;
+		height: 100px;
+		background: #f1f2f2;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	#willesPlay .otherControl .volumeBar:after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -7px;
+		left: 5px;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-top: 8px solid #f1f2f2;
+	}
+	
+	#willesPlay .otherControl .volumeBar .volumewrap {
+		background: #a2a7aa;
+		width: 8px;
+		height: 80px;
+		position: absolute;
+		bottom: 10px;
+		left: 9px;
+		border-radius: 4px;
+	}
+	
+	#willesPlay .otherControl .volumeBar .progress {
+		background: none;
+	}
+	
+	#willesPlay .otherControl .volumeBar .progress-bar {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		border-radius: 4px;
+	}
+	
+	video::-webkit-media-controls-enclosure {
+		/*禁用播放器控制栏的样式*/
+		display: none !important;
+	}
+	
+	:-webkit-full-screen {}
+	
+	.videoList .video {
+		cursor: pointer;
+	}
+	
+	.videoList img {
+		width: 100%;
+	}
+	
+	.videoList .video-title {
+		position: relative;
+		bottom: 28px;
+		background: #000;
+		width: 100%;
+		opacity: 0.6;
+		color: #fff;
+		font-size: 16px;
+		height: 28px;
+		line-height: 28px;
+		padding: 0 5px;
+	}
+	
+	.ads1 {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 290px;
+		height: 250px;
+	}
+	
+	.progress-bar-success {
+		background: #1ca088;
+	}
+	.playVideoBox .vjs-control-bar,
+	.playVideoBox .vjs-big-play-button {
+		display: none !important;
+	}
+	.playVideoBox{
+		position: absolute;
+		transition: all .5s;
+		background: #000;
+		border: 1px #000 solid;
+	}
+	.videos{
+		width:90%;
+		height: auto;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		top: 50%;
+        transform: translateY(-50%);
+	}
+	.playVideoBox.splitScreen1{
+		width: 30%;
+		height: 40%;
+		left: 0;
+		top: 0;
+	}
+	
+	.playVideoBox.splitScreen2{
+		height: 100%;
+		width: 70%;
+		left: 30%;
+		border: 1px #000 solid;
+		top: 0;
+	}
+	.playVideoBox.pip1{
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		border: 1px #000 solid;
+	}
+	.playVideoBox.pip2{
+		height: 40%;
+		width: 30%;
+		left: 70%;
+		top:60%;
+		border: 1px #000 solid;
+		cursor: move;
+		z-index: 1000;
+	}
+	.playVideoBox.unchecked1{
+		height: 100%;
+		width:100%;
+		left: 0%;
+		top:0%;
+		border: 1px #000 solid;
+	}
+	.playVideoBox.unchecked2{
+		display: none;
+	}

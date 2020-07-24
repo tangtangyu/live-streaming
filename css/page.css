@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+    font-family: "黑体";
+}
+body{
+    background:#fff;
+}
+#page{
+    // width: 1366*@cl;
+//  height: 100vh;
+    margin: 0 auto;
+    // overflow: hidden;
+    box-sizing: border-box;
+    display: none;
+    
+}
+/* 左侧 */
+.leftpage{
+    width: 1000px;
+    float: left;
+    // background:#f1f1f1;
+}
+.leftpage>.titletop{
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px ;
+}
+.titvarop{
+    padding:5px 10px;
+}
+.leftpage .titbar{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.gvertical{
+    font-size: 20px;
+}
+.gvertical::before{
+    content: "";
+    border-left:4px solid #1ca088;
+    padding-left:10px;
+}
+.leftpage>.titletop>.titbar>.gvertical{
+    font-size: 20px;
+    float: left;
+}
+.leftpage>.titletop>.titbar>.gvertical::before{
+    content: "";
+    border-left:4px solid #1ca088;
+    padding-left:10px;
+}
+.leftpage .speaker{
+    padding:10px 0 0 5px;
+}
+.titbtn button{
+    padding: 5px 10px;
+    margin:5px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 10px;
+    font-size:10px ;
+    background: #ff4001;
+    color: #fff;
+
+}
+/* .wrap:.包裹矩形的div，用来控制矩形的大小 */
+.leftpage>.wrap {
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    position: relative;
+    
+}
+.diamond{
+    position: absolute;
+    z-index: 999;
+    width: 45px;
+    height: 31px;
+    background: url(../img/dia.jpg);
+    right:1px;
+    bottom: 17px;
+}
+.diamond2{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    bottom: 60px;
+}
+.shuiyin{
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    font-size: 16px;
+    color: rgba(255,255,255,.5);
+}
+#rsePlayerFrame{
+	position: absolute;
+	width:1082px;
+	height:605px; 
+	left: -72px;
+	top: -28px;
+}
+.leftpage>.intro{
+    width: 100%;
+    height: 60px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px ;
+}
+.introcontent{
+    /* padding-left: 15*@cl; */
+    padding: 5px 0 5px 10px;
+    box-sizing: border-box;
+}
+/* 右侧 */
+.rightpage{
+//  width: 330*@cl;
+//  height: 840*@cl;
+    float: left;
+    padding: 20px 10px 0 20px;
+    /* background: blue; */
+    background: #fff;
+}
+.studypast,.contents,.pageintro{
+    width: 100%;
+    clear: both;
+}
+.pageintro{
+    width: 100%;
+    background: #fff;
+}
+.pagebox{
+    width: 100%;
+    padding: 5px 0 5px 15px;
+    box-sizing: border-box;
+}
+.pagebox li{
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    line-height: 20px;
+    margin:5px 0;
+}
+.pagebox .jianjie{
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    position: relative;
+}
+.jianjie .zk{
+    width:20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.jianjie .sq{
+    display: none;
+    width:20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.pagebox li>div{
+    width: 100%;
+}
+.pagebox li>div>span{
+    float: left;
+}
+.pagebox li>div>p{
+    float: left;
+    width: 70%;
+}
+.pagebox>.jianjie>div>.suo{
+    float: left;
+    width: 70%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.pagebox>.jianjie>div>.active{
+    float: left;
+    width: 70%;
+    // height: 200px;
+}
+//课程目录
+.contents{
+    margin-top: 5px;
+    width: 100%;
+    background: #fff;
+}
+// 学习历史
+.studypast{
+    width: 100%;
+    overflow-y: auto;
+    background: #fff;
+    margin-top: 5px;
+}
+.timetable li{
+    width: 100%;
+    margin-top: 5px;
+}
+.timetable li>.list{
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+}
+.timetable li>.list>img{
+    width: 80px;
+    height: 50px;
+    float: left;
+}
+.timetable li>.list>div{
+    padding:5px 0 5px 10px;
+    box-sizing: border-box;
+    float: left;
+}
+.timetable li>.list>div>p{
+    font-size: 12px;
+    color: #666;
+    padding-top: 10px;
+}
+.studypast>.timetable{
+
+}
+.contents>ul,.studypast>.timetable{
+    padding: 5px 0 5px 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.contents>ul{
+    margin-top: 5px;
+}
+.contents ul li{
+    line-height: 24px;
+    text-indent: 1em;
+    cursor: pointer;
+    position: relative;
+}
+.contents ul li.active{
+   color:rgb(28,160,136);
+}
+.contents ul li img{
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    width: 120px;
+    height: 80px;
+    display: none;
+}
+.contents ul li:hover{
+    color:rgb(28,160,136);
+}
+.contents ul li:hover img{
+    display: block;
+    
+}
+

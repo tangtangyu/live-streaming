@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>pc视频页</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<link rel="stylesheet" type="text/css" href="css/video.css">
+		<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.8/skins/default/aliplayer-min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			.prism-setting-btn{
+				/*display: none;*/
+            }
+            img {
+                width: 30px;
+                height: 30px;
+                margin-top: 3px;
+                vertical-align:top;
+            }
+		</style>
+		<!--<script src="js/EasyPlayer-element.min.js"></script>-->
+		<script src="js/json2.js"></script>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/globle1.js"></script>
+		<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.8/aliplayer-min.js"></script>
+		
+	</head>
+	<body>
+		<div id="page">
+			<!-- 左侧 -->
+			<div class="leftpage">
+				<!-- 课程标题 -->
+				<div class="titvarop" style="position: relative;">
+					<!-- <div class="zbBtn" style="position: absolute;right:30px;top: 15px; width: 105px;height: 32px;line-height:32px;background:rgb(98,207,210);border-radius: 10px;text-align: center;color: #fff;box-shadow: #999 1px 1px 2px 2px;">
+						直播进行中...
+					</div> -->
+					<!-- <div class="time" style="position: absolute;right:30px;top: 15px; ">
+						2020年7月31日14：00直播
+						<span class="time1"  style="color: #f00;"></span>
+					</div> -->
+                    <div class="titbar" onclick="back()">
+                        <img src="./images/箭头.png" alt="" style="width: 20px;height: 20px;">
+						<b class="gvertical kcbt">
+							【文化周】：《感动城建2020》
+						</b>
+					</div>
+					<div class="speaker">
+						2020年企业文化周  第四届
+						<!--主讲人：
+						<span class="zjr"></span> [
+						<span class="zjrdw"></span> /
+						<span class="shijian"></span>]  |  在线人数：<span class="zxrs">0</span>人   |   播放次数：<span class="bfcs">0</span>次-->
+						
+					</div>
+					
+				</div>
+				<!-- 视频 -->
+				<div id="willesPlay" class="wrap">
+					<!--<div class="playContent">
+						<div class="playVideoBox unchecked1">
+							 <easy-player
+							 	webkit-playsinline playsinline
+							 	video-url="http://live.jacktong.top/bucg/1.m3u8?auth_key=1593770616-0-0-045dda8a9e2d46b717e58f8911fe6a6a"
+							 	live="true"
+							    snap-url='images/bg5.png'
+							    stretch="true"
+							    auto-play="true"
+							    class="videos"
+							 	> 
+							 </easy-player>
+						</div>
+						<div class="playVideoBox unchecked2">
+							  <easy-player
+							 	webkit-playsinline playsinline
+							 	video-url="http://live.jacktong.top/bucg/1.m3u8?auth_key=1593770616-0-0-045dda8a9e2d46b717e58f8911fe6a6a"
+							 	live="false" 
+							    snap-url='images/bg5.png'
+							    stretch="true"
+							    auto-play="false"
+							    class="videos"
+							 	> 
+							 </easy-player>
+						</div>
+						<div class="playTip glyphicon glyphicon-play-circle"></div>
+					</div>
+					<div class="playControll">
+						<div class="playPause playIcon"></div>
+						<div class="timebar" style="display: none;">
+							<span class="currentTime">0:00:00</span>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+							</div>
+							<span class="duration">0:00:00</span>
+						</div>
+						<div class="otherControl">
+							<span class="volume glyphicon glyphicon-volume-down"></span>
+							 
+							<span class="glyphicon glyphicon-unchecked" title="单显"  style="display: none;"></span>
+							
+							<span class="glyphicon glyphicon-retweet" title="切换"  style="display: none;"></span>
+							
+							<span class="glyphicon glyphicon-object-align-bottom" style="transform: rotateZ(180deg); display: none;" title="分屏"></span>
+							
+							<span class="glyphicon glyphicon-modal-window" style="transform: rotateZ(180deg); display: none;" title="画中画"></span>
+							
+							<span class="glyphicon glyphicon-fullscreen" title="全屏"></span>
+							<div class="volumeBar">
+								<div class="volumewrap">
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 8px;height: 40%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<!-- 课程简介 -->
+				<!--<div class="intro" style="line-height: 32px;margin-top: 12px;">
+					在线人数  ： 13576  人
+					点赞 ：  7586
+					<div class="info" style="float: right;">
+						<div class="input-group" style="width: 500px;">
+						    <input type="text" class="form-control" placeholder="留言：不能超过（80个字）">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button">发送</button>
+						    </span>
+						</div>
+					</div>
+				</div>-->
+			</div>
+			<!-- 右侧 -->
+			<div class="rightpage">
+				<div class="pageintro">
+					<p class="gvertical">直播简介：</p>
+					<ul class="pagebox">
+						<li>
+							<div>
+								<span>视频名称：</span>
+								<p class="kcname">《感动城建2020》</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<span>所属类别：</span>
+								<p class="tgdw">文化周</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<span>主办单位：</span>
+								<p class="unit">集团宣传部</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<span>上线时间：</span>
+								<p class="xueshi">2020年7月31日</p>
+							</div>
+						</li>
+						
+						<!--<li class="jianjie" style="clear: both;">
+							<div id="con">
+								<span>课程简介：</span>
+								<p class="suo kcjj"></p>
+							</div>
+							<img src="img/s.png" alt="" class="zk">
+							<img src="img/f.png" alt="" class="sq">
+						</li>-->
+					</ul>
+
+				</div>
+				<!-- 课程目录 -->
+				<!--<div class="contents">
+					<p class="gvertical">留言记录</p>
+					<ul>
+						<li>
+							<p class="lInfo">
+								视频拍的好棒，祝福集团越来越强！
+							</p>
+							<p style="text-align: right;">
+								<span>
+									智慧院 李某某
+								</span>
+								<br />
+								<span>
+									2020-07-01 15：00
+								</span>
+							</p>
+						</li>
+						<li class="line" style="border:1px rgb(28,160,136) dashed;"></li>
+						<li>
+							<p class="lInfo">
+								视频拍的好棒，祝福集团越来越强！
+							</p>
+							<p style="text-align: right;">
+								<span>
+									智慧院 李某某
+								</span>
+								<br />
+								<span>
+									2020-07-01 15：00
+								</span>
+							</p>
+						</li>
+					</ul>
+				</div>-->
+				<!-- 学习历史 -->
+				<!--<div class="studypast">
+					<p class="gvertical">学习历史</p>
+					<ul class="timetable"></ul>
+				</div>-->
+
+			</div>
+		</div>
+
+	</body>
+	<script>
+		document.oncontextmenu =function(){
+			return false
+		}
+        var userCode = GetQueryString('usercode');
+        
+        $('.kcbt').html('【文化周】：《' +GetQueryString('headTitle') + '》' )
+        $('.kcname').html('《' +GetQueryString('headTitle') + '》')
+        $('.xueshi').html(GetQueryString('date') + '')
+        $('.speaker').html(GetQueryString('title'))
+		// 页面布局
+		function setSize() {
+			var height =$(window).height();
+			var centerHeight = height -60;
+			$('.wrap').css('height', centerHeight + 'px');
+			$('.timetable').css('height', height / 2 - 180 + 'px');
+			$('.contents ul').css('height', height / 2 - 160 + 'px');
+			var width = $(window).width();
+			$('.leftpage').css('width', width - 330 + 'px');
+			$('.rightpage').css('width', 280+ 'px');
+			$("#page").css('display', 'block');
+		}
+		$(window).resize(function() {
+			setSize();
+		})
+		var bol = false;
+		$('.jianjie').click(function() {
+			bol = !bol;
+			if(bol) {
+				$("#con p").removeClass("suo").addClass("active");
+				$(".zk").attr({
+					src: "img/f.png",
+					alt: "Test Image"
+				});
+			} else {
+				$("#con p").removeClass("active").addClass("suo");
+				$(".zk").attr({
+					src: "img/s.png",
+					alt: "Test Image"
+				});
+			}
+		});
+		setSize();
+		var player = new Aliplayer({
+	        id: 'willesPlay',
+	        width: '100%',
+	        height:'100%',
+	        autoplay: false,
+			"isLive": false,
+			"liveRetry":'2',
+		  	"rePlay": false,
+		  	"playsinline": true,
+		  	"preload": true,
+		  	"controlBarVisibility": "hover",
+		  	"useH5Prism": true,
+		  	cover: 'images/bg.jpg',
+	  		source :GetQueryString('src')
+			},function(player){
+	            console.log('播放器创建好了。')
+	        });
+					
+//		$.ajax({
+//			url: window.host + '/service/curriculumtrain?method=history&usercode='+userCode,
+//			type: 'get',
+//			dataJson: 'json',
+//			success: function(data) {
+//              var data = JSON.parse(data);
+//              if(!data.data){
+//					return
+//				}
+//				var arr = data.data;
+//				var str = '';
+//				for(var i = 0; i < arr.length; i++) {
+//					str += '<li><div class="list"><img src="'+arr[i].preview+'" alt="图">';
+//					str += '<div><span>'+arr[i].coursetitle+'</span><p>'+arr[i].speaker+'|'+arr[i].videoduration+'</p></div></div></li>';
+//				}
+//				$('.timetable').html(str)
+//
+//			}
+//		})
+//				
+//		function videoInfo(pk) {
+//			$.ajax({
+//				url: window.host + '/service/curriculumtrain?method=videoInfo&videopk=' + pk,
+//				type: 'get',
+//				dataJson: 'json',
+//				success: function(data) {
+//                  var data = JSON.parse(data);
+//                  
+//					var arr = data.data[0];
+//					$('.introcontent').html(arr.spjs);
+//					$('.kcbt').html(arr.kcname + '<span style="margin-left:5px;">[ 第' + arr.jc + '节/共' + arr.cotjc + '节 ]</span>');
+//					$('.zjr').html(arr.zjr);
+//					$('.zjrdw').html(arr.zjrdw);
+//					$('.shijian').html(arr.shijian);
+//					$('.bfcs').html(arr.bfcs);
+//					if(arr.label != '') {
+//						var labels = arr.label.split('*##*');
+//						var str = '';
+//						for(var i = 0; i < labels.length; i++) {
+//							str += '<button>' + labels[i] + '</button>'
+//						}
+//						$('.titbtn').html(str);
+//					}
+//
+//					$('.kcname').html(arr.kcname);
+//					$('.tgdw').html(arr.tgdw);
+//					$('.xueshi').html(arr.xueshi);
+//					$('.kcjj').html(arr.kcjj);
+//
+//				}
+//			})
+//		}
+
+		
+
+        function GetQueryString(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    //if(pair[0] == variable){return pair[1];}
+                        if(pair[0] == variable){return decodeURI(pair[1]);} //解决中文乱码
+            }
+            return false;
+        }
+
+		function back() {
+			location.href = 'pc.html?usercode=' + userCode;
+		}
+		//视频心跳
+//		var setTime = null;
+//
+//		function heartbeat(pk) {
+//			clearInterval(setTime);
+//			setHeart(pk);
+//			setTime = setInterval('setHeart('+pk+')', 30000);
+//
+//		}
+//		function  setHeart(pk) {
+//			$.ajax({
+//				url: window.host + '/service/curriculumtrain?method=heartbeat&videopk=' + pk + '&usercode=' + userCode + '&playtime=001&coursepk=' + kcpk,
+//				type: 'get',
+//				dataJson: 'json',
+//				success: function(data) {
+//					$('.zxrs').html(data);
+//				}
+//			})
+//		}
+		// var endTime="2020/7/31 14:00";
+		// 	countDown(endTime,".time1");
+	  	// var interval =	setInterval(function(){
+		// 	countDown(endTime,".time1");
+		// }, 1000);
+      	// function addZero(i) {
+        //   	return i < 10 ? "0" + i: i + "";
+     	// }
+	    // function countDown(time,dom) {
+	    //     var nowtime = new Date();
+	    //     var endtime = new Date(time);
+	    //     var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+	    //     var d = parseInt(lefttime / (24*60*60))
+	    //     var h = parseInt(lefttime / (60 * 60) % 24);
+	    //     var m = parseInt(lefttime / 60 % 60);
+	    //     var s = parseInt(lefttime % 60);
+	    //     d = addZero(d);
+	    //     h = addZero(h);
+	    //     m = addZero(m);
+	    //     s = addZero(s);
+	    //     $(".zbBtn").hide();
+	    //     $(dom).html("倒计时："+d+"天"+h+"时"+m+"分"+s+"秒");
+	    //     if (lefttime <= 0) {
+	    //     	$('.time').hide()
+	    //       	$(".zbBtn").show();
+	    //     	clearInterval(interval);
+	    //         return;
+	    //     }
+        // }
+	</script>
+	<!--<script src="js/play.js"></script>-->
+</html>

@@ -1,0 +1,21 @@
+[{
+        "title": "第一届文化周",
+        "date": "2017年7月",
+        "title1":"2017年企业文化周 第一届",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo1.mp4",
+        "img":"images/z1.jpg"
+    },{
+        "title": "第二届文化周",
+        "date": "2018年7月",
+        "title1":"2018年企业文化周 第二届",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo2.mp4",
+        "img":"images/z2.jpg"
+    },
+    {
+        "title": "第三届文化周",
+        "title1":"2019年企业文化周 第三届",
+        "date": "2019年7月",
+        "video":"http://i.bucg.com/e/act/whzvideo/whzvideo3.mp4",
+        "img":"images/z3.jpg"
+    }
+]

@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../images/pcbg.jpg) no-repeat 100% 100%;
+	background-size: 100% 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+#J_prismPlayer{
+	width: 40%;
+	height: 33%;
+	margin:auto;
+	position: absolute;
+	top:10%; 
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.prism-setting-speed,.prism-setting-cc,.prism-setting-audio,.prism-cc-btn{
+	display: none !important;
+}
+.time{
+	position: absolute;
+	right:30px;
+	top: 15px;
+	color: #fff;
+	z-index:99999;
+}
+.btns{
+	width:400px;
+	height: 50px;
+	margin:auto;
+	position: absolute; 
+	bottom: 2%;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+.btn{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;*-9+6
+	/8
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #E3E3E3;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	margin:0 50px;
+}
+.btn-zb{
+	background: url(../img/c1.png) no-repeat 100% 100% / 100% 100%;
+}
+.btn-wzb{
+background: url(./img/c2.png) no-repeat 100% 100% / 100% 100%;
+}
+.timeBox{
+	width:50%;
+	height:250px;
+	color: #fff;
+	padding: 20px;
+	margin:auto;
+	position: absolute;
+	top:0%; 
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+}
+.timebar{
+	float: left;
+	border-radius: 5px;
+	width: 200px;
+	height: 69px; 
+	text-align: center; 
+	/*background: rgb(30,159,137);*/
+	margin:0 10px;
+}
+.timebar b img{
+	width: 60px;
+}
+.timebar b{
+	font-size: 30px;
+}
+.timebar span{
+	width: 65px;
+}
+.timebar span img{
+	width: 65px;
+}

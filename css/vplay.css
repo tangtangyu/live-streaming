@@ -1,0 +1,118 @@
+#vplay{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: .3rem;
+    overflow: hidden;
+   background: #fff;
+}
+#vplay{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* background: url('../img/lo.jpg'); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.content{
+    width: 100%;
+    box-sizing: border-box;
+    /* margin-top: 18vh; */
+    flex: 1;
+    /* padding: .2rem .1rem 0 .1rem; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.wrap {
+    width: 100%;
+    /* height: 220px; */
+    /* background: #999; */
+    /* height: calc(100vh - 7em); */
+    position: relative;
+} 
+/* .vjs-big-play-centered .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    margin-top: 0.25em !important;
+    margin-left: -0.5em !important;
+}
+.my-video-dimensions {
+    width: 100%;
+    height: 100%;
+}
+#myVideo{
+    width: 100%;
+    height: 100%;
+} */
+/* .vjs-button>.icon-picture:before {
+    content: "" !important;
+} */
+/* .port{
+    width: 100%;
+    height: .6rem;
+    line-height: .6rem;
+    display:flex;
+    justify-content: space-around;
+    margin: .2rem 0;
+}
+.port img{
+    width: 25vw;
+    height: 4.5vh;
+} */
+.time{
+	position: absolute;
+	right:30px;
+	top: 15px;
+	color: #fff;
+	z-index:99999;
+}
+.tab{
+    width: 100%;
+    flex:1;
+    /* margin-top: .75rem; */
+    /* margin-top: .8rem; */
+    box-sizing: border-box;
+    /* position: relative; */
+}
+.tab h2{
+    color: #666;
+    font-weight: 700;
+    padding-left:10px ;
+}
+.van-tabs__content>.synopsis{
+    width: 100%;
+    position: relative;
+}
+.synopsis{
+    height: auto;
+    overflow-y: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    padding-top: 0;
+    
+}
+.synopsis div{
+    margin-top: .5rem;
+}
+
+#J_prismPlayervideo::-webkit-media-controls{
+    display:none !important;
+}
+.prism-controlbar {display: none !important;}
+
+.prism-player .prism-big-play-btn{
+    position: absolute;
+    left: 165px !important;
+    bottom: 80px;
+    display: block;
+}
